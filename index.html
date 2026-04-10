@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anime Player</title>
+</head>
+
+<body style="background:#111;color:white;text-align:center;">
+
+<h1>Hianime</h1>
+
+<div id="player"></div>
+
+<button onclick="play('https://cucumbersaladblog.blogspot.com/2026/04/fullmetal-alchemist.html')">
+Episode 1
+</button>
+
+<script>
+function play(url){
+  document.getElementById("player").innerHTML =
+  '<iframe src="'+url+'" width="100%" height="400" allowfullscreen></iframe>';
+}
+
+// auto play
+play("https://cucumbersaladblog.blogspot.com/2026/04/fullmetal-alchemist.html");
+</script>
+
+</body>
+</html>
