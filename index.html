@@ -27,12 +27,103 @@ body {
 
 /* HERO SECTION */
 .hero {
-  max-width:1100px;
+  max-width:1200px;
+  height:420px; /* FIXED HEIGHT like hianime */
   margin:40px auto;
   border-radius:20px;
   overflow:hidden;
   display:flex;
   background:#1e1e2f;
+}
+
+/* LEFT SIDE */
+.left {
+  width:50%;
+  padding:40px 50px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  z-index:2;
+}
+
+/* LOGO IMAGE */
+.logo-img {
+  width:180px;
+  margin-bottom:20px;
+}
+
+/* SEARCH */
+.search-box {
+  display:flex;
+  margin-bottom:15px;
+}
+
+.search-box input {
+  width:320px;
+  padding:12px;
+  border:none;
+  border-radius:10px 0 0 10px;
+  font-size:14px;
+}
+
+.search-box button {
+  padding:12px 16px;
+  border:none;
+  background:#ff6fa5;
+  color:white;
+  border-radius:0 10px 10px 0;
+  cursor:pointer;
+}
+
+/* TEXT */
+.top-search {
+  font-size:13px;
+  color:#ccc;
+  margin-bottom:25px;
+  line-height:1.6;
+}
+
+/* BUTTON */
+.btn {
+  width:160px;
+  padding:12px;
+  background:#ff6fa5;
+  border-radius:10px;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+}
+
+/* RIGHT SIDE */
+.right {
+  width:50%;
+  position:relative;
+}
+
+/* IMAGE */
+.right img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* OVERLAY (EXACT EFFECT 🔥) */
+.right::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  background:linear-gradient(
+    90deg,
+    #1e1e2f 0%,
+    rgba(30,30,47,0.95) 25%,
+    rgba(30,30,47,0.7) 50%,
+    rgba(30,30,47,0.3) 75%,
+    transparent 100%
+  );
 }
 
 /* LEFT SIDE */
@@ -156,12 +247,13 @@ body {
 <!-- HERO -->
 <div class="hero">
 
+  <!-- LEFT -->
   <div class="left">
 
-    <div class="logo">
-      h<span>!</span>anime
-    </div>
+    <!-- LOGO IMAGE -->
+    <img class="logo-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbP1BsDwcwRkwCWGl67jM97xYre0gNnfsbUPKJFZbjPr4KVICwm9nTT7ze-E8y8QEHzL0oyXZ8b90GgE7oSpaIuca5yJuhv_z_AFW-F8r7mNa_xm6UBo6J5H3l0JbmiN1fegi41zNik8VDp4xZZLMg0MBmfIIRrDK5wWwk9Kg0wE3Ud40Mcf7-wtnCLUo/s823/logo%20(1).png">
 
+    <!-- SEARCH -->
     <div class="search-box">
       <input type="text" placeholder="Search anime...">
       <button>🔍</button>
@@ -173,6 +265,11 @@ body {
 
     <a href="home/index.html" class="btn">Watch anime ➜</a>
 
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieNh5RMAw3H0p33uuwa33a0NYJVGBooX7JuDgYuws5rmf1sYz19h88T-E5vGHZl6ZzMEDe7Zv7z-bmtV1M0guGDHCLmRyo6jVyVBaQUvFhQmWE0JUng6VkIbPI0T8hn7E5SHgtc5OY6noUfoh_yfsnd5nNhsdaR9cJE6VcnRu_gI8FWrODwaDvfrgQOFM/s1091/anw-min.png">
   </div>
 
 </div>
