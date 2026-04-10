@@ -1,74 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HiAnime Clone</title>
+<title>HiAnime</title>
 
 <style>
 body {
-  background:#0f0f0f;
-  color:white;
-  font-family:Arial;
   margin:0;
+  font-family:Arial;
+  background: linear-gradient(180deg,#1a1a2e,#0f0f1a);
+  color:white;
 }
 
-/* HEADER */
-.header {
-  background:#1a1a1a;
-  padding:15px;
-  font-size:20px;
-  font-weight:bold;
-}
-
-/* MAIN LAYOUT */
-.container {
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
-}
-
-/* PLAYER */
-.player iframe {
-  width:100%;
-  height:450px;
-  border-radius:10px;
-}
-
-/* INFO */
-.info {
+/* NAVBAR */
+.nav {
   display:flex;
-  margin-top:20px;
+  justify-content:center;
+  gap:40px;
+  padding:20px;
+  font-size:15px;
 }
 
-.poster {
-  width:200px;
-  border-radius:10px;
+.nav a {
+  color:white;
+  text-decoration:none;
 }
 
-.details {
-  margin-left:20px;
+/* HERO SECTION */
+.hero {
+  max-width:1100px;
+  margin:40px auto;
+  padding:40px;
+  border-radius:20px;
+  background:linear-gradient(90deg, rgba(20,20,40,0.9), rgba(20,20,40,0.4)),
+             url('https://i.imgur.com/8Z5G5qT.jpg');
+  background-size:cover;
+  display:flex;
+  align-items:center;
 }
 
-/* EPISODES */
-.episodes {
-  margin-top:30px;
+/* LEFT SIDE */
+.left {
+  width:50%;
 }
 
-.ep-btn {
-  display:inline-block;
-  padding:8px 12px;
-  margin:5px;
-  background:#2a2a2a;
-  border-radius:5px;
+.logo {
+  font-size:50px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.logo span {
+  color:#ff6fa5;
+}
+
+/* SEARCH */
+.search-box {
+  display:flex;
+  margin-bottom:15px;
+}
+
+.search-box input {
+  width:70%;
+  padding:12px;
+  border:none;
+  border-radius:10px 0 0 10px;
+  font-size:14px;
+}
+
+.search-box button {
+  padding:12px;
+  border:none;
+  background:#ff6fa5;
+  color:white;
+  border-radius:0 10px 10px 0;
   cursor:pointer;
 }
 
-.ep-btn:hover {
-  background:#ff3d3d;
+/* TEXT */
+.top-search {
+  font-size:13px;
+  color:#ccc;
+  margin-bottom:20px;
 }
 
-/* ACTIVE BUTTON */
-.active {
-  background:#ff3d3d;
+/* BUTTON */
+.btn {
+  display:inline-block;
+  padding:12px 20px;
+  background:#ff6fa5;
+  border-radius:10px;
+  text-decoration:none;
+  color:white;
+}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+  .hero {
+    flex-direction:column;
+  }
+  .left {
+    width:100%;
+  }
 }
 </style>
 
@@ -76,58 +108,38 @@ body {
 
 <body>
 
-<div class="header">
-  HiAnime 🔥
+<!-- NAVBAR -->
+<div class="nav">
+  <a href="#">Home</a>
+  <a href="#">Movies</a>
+  <a href="#">TV Series</a>
+  <a href="#">Most Popular</a>
+  <a href="#">Top Airing</a>
 </div>
 
-<div class="container">
+<!-- HERO -->
+<div class="hero">
 
-  <!-- PLAYER -->
-  <div class="player" id="player"></div>
+  <div class="left">
 
-  <!-- INFO -->
-  <div class="info">
-    <img class="poster" src="https://via.placeholder.com/200x300">
-
-    <div class="details">
-      <h2>Fullmetal Alchemist</h2>
-      <p>Genre: Action, Adventure</p>
-      <p>Status: Completed</p>
-      <p>Watch all episodes in HD.</p>
+    <div class="logo">
+      h<span>!</span>anime
     </div>
-  </div>
 
-  <!-- EPISODES -->
-  <div class="episodes" id="episodes">
+    <div class="search-box">
+      <input type="text" placeholder="Search anime...">
+      <button>🔍</button>
+    </div>
 
-    <div class="ep-btn active" onclick="play(this, 'https://cucumbersaladblog.blogspot.com/2026/04/fullmetal-alchemist.html')">1</div>
-    <div class="ep-btn" onclick="play(this, 'https://cucumbersaladblog.blogspot.com/2026/04/fullmetal-alchemist.html')">2</div>
-    <div class="ep-btn" onclick="play(this, 'https://cucumbersaladblog.blogspot.com/2026/04/fullmetal-alchemist.html')">3</div>
-    <div class="ep-btn" onclick="play(this, 'https://cucumbersaladblog.blogspot.com/2026/04/fullmetal-alchemist.html')">4</div>
-    <div class="ep-btn" onclick="play(this, 'https://cucumbersaladblog.blogspot.com/2026/04/fullmetal-alchemist.html')">5</div>
+    <div class="top-search">
+      Top search: Solo Leveling Season 2 • One Piece • Blue Lock • Frieren • Shangri-La Frontier
+    </div>
+
+    <a href="home/index.html" class="btn">Watch anime ➜</a>
 
   </div>
 
 </div>
-
-<script>
-function play(btn, url){
-
-  // Load video
-  document.getElementById("player").innerHTML =
-    '<iframe src="'+url+'" allowfullscreen></iframe>';
-
-  // Remove active from all
-  let buttons = document.querySelectorAll(".ep-btn");
-  buttons.forEach(b => b.classList.remove("active"));
-
-  // Add active to clicked
-  btn.classList.add("active");
-}
-
-// Auto play first
-play(document.querySelector(".ep-btn"), "https://cucumbersaladblog.blogspot.com/2026/04/fullmetal-alchemist.html");
-</script>
 
 </body>
 </html>
