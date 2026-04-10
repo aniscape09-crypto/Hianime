@@ -3,146 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HiAnime - Watch Anime Online Free</title>
+    <title>HiAnime - Watch Anime Online, Free Anime Streaming Online (official)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #12131a;
             color: #ffffff;
             margin: 0;
-            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .hero-card {
+        .containbg {
             background-color: #242530;
-            border-radius: 30px;
-            overflow: hidden;
-            position: relative;
         }
 
-        .search-btn {
-            background-color: #ffbade;
-            color: #12131a;
-            transition: all 0.3s ease;
-        }
-
-        .search-btn:hover {
-            background-color: #ff85c1;
-        }
-
-        .watch-btn {
-            background-color: #ffbade;
-            color: #12131a;
-            padding: 12px 28px;
-            border-radius: 12px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: transform 0.2s ease, background-color 0.3s ease;
-        }
-
-        .watch-btn:hover {
-            background-color: #ff85c1;
-            transform: translateY(-2px);
-        }
-
-        /* Shadow effect for the character image to blend into the card */
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 40%;
-            height: 100%;
+        .mainbg {
             background: linear-gradient(to right, #242530 0%, transparent 100%);
-            z-index: 10;
         }
 
-        @media (max-width: 768px) {
-            .image-overlay {
-                width: 100%;
-                background: linear-gradient(to bottom, transparent 0%, #242530 80%);
-            }
+        .imagdesign {
+            object-fit: cover;
+            object-position: right;
+            height: 100%;
+            width: 100%;
+        }
+
+        .search-input {
+            background: #ffffff;
+            color: #000;
+        }
+
+        .btn-pink {
+            background-color: #ffbade;
+            color: #12131a;
+            transition: 0.3s;
+        }
+
+        .btn-pink:hover {
+            background-color: #ee559ce5;
+        }
+
+        .nav-link:hover {
+            color: #ee559ce5;
+        }
+
+        /* Custom scrollbar to keep it clean */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #12131a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #242530;
+            border-radius: 10px;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="flex flex-col items-center">
 
-    <!-- Header / Navigation -->
-    <header class="w-full py-8">
-        <nav>
-            <ul class="flex justify-center items-center gap-6 md:gap-10 text-[15px] font-medium text-gray-300">
-                <li><a href="#" class="hover:text-white transition">Home</a></li>
-                <li><a href="#" class="hover:text-white transition">Movies</a></li>
-                <li><a href="#" class="hover:text-white transition">TV Series</a></li>
-                <li><a href="#" class="hover:text-white transition">Most Popular</a></li>
-                <li><a href="#" class="hover:text-white transition">Top Airing</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="w-full max-w-[1300px] space-y-7">
+        
+        <!-- Header / Navigation -->
+        <header class="md:pt-20 pt-12 flex justify-between items-center px-4">
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex justify-center w-full text-white font-medium space-x-10">
+                <a class="nav-link transition" href="#">Home</a>
+                <a class="nav-link transition" href="#">Movies</a>
+                <a class="nav-link transition" href="#">TV Series</a>
+                <a class="nav-link transition" href="#">Most Popular</a>
+                <a class="nav-link transition" href="#">Top Airing</a>
+            </div>
+            
+            <!-- Mobile Nav -->
+            <div class="md:hidden text-white flex items-center gap-2">
+                <button class="focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <p class="text-xl font-medium">Menu</p>
+            </div>
+        </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow flex items-center justify-center px-4 pb-20">
-        <div class="container max-w-6xl">
-            <div class="hero-card flex flex-col md:flex-row min-h-[480px]">
+        <!-- Desktop Hero (Visible on MD and LG) -->
+        <div class="lg:flex md:flex hidden lg:max-w-[1300px] md:max-w-[750px] lg:h-[498px] containbg rounded-[1.8rem] overflow-hidden relative mx-4 md:mx-auto">
+            <div class="lg:w-[55%] md:w-[80%] lg:pl-20 md:pl-12 lg:py-16 md:py-10 z-20">
+                <a href="#"><img src="https://hianimes.se/assets/logo.png" alt="logo" class="w-[11rem]"/></a>
                 
-                <!-- Left Content Section -->
-                <div class="w-full md:w-1/2 p-8 md:p-14 flex flex-col justify-center z-20">
-                    <!-- Logo -->
-                    <div class="mb-8">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbP1BsDwcwRkwCWGl67jM97xYre0gNnfsbUPKJFZbjPr4KVICwm9nTT7ze-E8y8QEHzL0oyXZ8b90GgE7oSpaIuca5yJuhv_z_AFW-F8r7mNa_xm6UBo6J5H3l0JbmiN1fegi41zNik8VDp4xZZLMg0MBmfIIRrDK5wWwk9Kg0wE3Ud40Mcf7-wtnCLUo/s823/logo%20(1).png" 
-                             alt="h!anime Logo" 
-                             class="h-12 md:h-14">
+                <div class="flex w-full space-x-2 py-7">
+                    <div class="w-[75%] bg-white rounded-xl">
+                        <input type="search" class="text-lg w-full outline-none rounded-xl px-5 py-3 search-input" placeholder="Search anime..."/>
                     </div>
+                    <button class="btn-pink px-5 py-4 rounded-xl text-xl"> 
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg> 
+                    </button>
+                </div>
+                
+                <p class="text-white font-medium leading-[26px]">
+                    Top search: Solo Leveling Season 2: Arise from the Shadow <br/>
+                    Sakamoto Days. Solo Leveling One Piece The Apothecary <br/> 
+                    Diaries Season 2 Shangri-La Frontier Blue Lock Frieren: Beyond <br/> 
+                    Journey's End I'm Getting Married to a Girl I Hate in My...
+                </p>
 
-                    <!-- Search Bar -->
-                    <div class="flex items-center gap-2 mb-6">
-                        <div class="relative flex-grow">
-                            <input type="text" 
-                                   placeholder="Search anime..." 
-                                   class="w-full py-3 px-5 rounded-xl bg-white text-gray-800 outline-none text-lg">
-                        </div>
-                        <button class="search-btn p-3 rounded-xl">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                        </button>
+                <button class="btn-pink mt-10 px-7 py-4 rounded-xl font-semibold text-xl flex justify-center items-center gap-6">
+                    <p>Watch anime</p>
+                    <div class="pt-1 text-[26px]">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208 208-93.13 208-208zm-212.65 91.36a16 16 0 0 1-.09-22.63L303.58 272H170a16 16 0 0 1 0-32h133.58l-52.32-52.73A16 16 0 1 1 274 164.73l79.39 80a16 16 0 0 1 0 22.54l-79.39 80a16 16 0 0 1-22.65.09z"></path></svg>
                     </div>
+                </button>
+            </div>
+            
+            <!-- Hero Image with Gradient Overlay -->
+            <div class="w-[750px] overflow-hidden flex relative">
+                <div class="mainbg absolute z-10 w-full h-full"></div>
+                <img src="https://hianimes.se/assets/anw-min.png" alt="mainimage" class="imagdesign"/>
+            </div>
+        </div>
 
-                    <!-- Top Search Text -->
-                    <div class="mb-10 text-sm leading-relaxed text-gray-300">
-                        <span class="font-bold text-gray-100">Top search:</span>
-                        <span class="ml-1 opacity-90">
-                            Solo Leveling Season 2: Arise from the Shadow, Sakamoto Days, Solo Leveling, One Piece, The Apothecary Diaries Season 2, Shangri-La Frontier, Blue Lock, Frieren: Beyond Journey's End, I'm Getting Married to a Girl I Hate in My...
-                        </span>
+        <!-- Mobile Hero (Visible on Small Screens only) -->
+        <div class="flex md:hidden containbg overflow-hidden relative mx-4 rounded-2xl">
+            <div class="w-full px-6 py-12 text-center">
+                <a class="flex justify-center" href="#"><img src="https://hianimes.se/assets/logo.png" alt="logo" class="w-[9rem]"/></a>
+                <div class="flex w-full space-x-2 py-7">
+                    <div class="w-[80%] bg-white rounded-xl">
+                        <input type="search" class="text-lg w-full outline-none rounded-xl px-5 py-3 search-input" placeholder="Search anime..."/>
                     </div>
+                    <button class="btn-pink px-4 py-4 rounded-xl text-xl"> 
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg> 
+                    </button>
+                </div>
+                <p class="text-white text-sm font-medium leading-[26px]">
+                    Top search: Solo Leveling Season 2: Arise from the Shadow Sakamoto Days. Solo Leveling One Piece The Apothecary Diaries Season 2 Shangri-La Frontier Blue Lock Frieren: Beyond Journey's End...
+                </p>
+                <button class="btn-pink w-full mt-10 px-7 py-3 rounded-xl font-semibold text-lg flex justify-center items-center gap-6">
+                    <p>Watch anime</p>
+                    <div class="pt-1 text-[26px]">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208 208-93.13 208-208zm-212.65 91.36a16 16 0 0 1-.09-22.63L303.58 272H170a16 16 0 0 1 0-32h133.58l-52.32-52.73A16 16 0 1 1 274 164.73l79.39 80a16 16 0 0 1 0 22.54l-79.39 80a16 16 0 0 1-22.65.09z"></path></svg>
+                    </div>
+                </button>
+            </div>
+        </div>
 
-                    <!-- Watch Button -->
-                    <div>
-                        <a href="#" class="watch-btn text-lg">
-                            Watch anime
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="bg-black text-white p-1 rounded-full"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                    </div>
+        <!-- Share Section -->
+        <div class="max-w-[1200px] mx-auto py-4">
+            <div class="w-full flex items-center gap-3 px-4 md:px-0 py-7 mx-auto relative z-40">
+                <img src="https://hianimes.se/assets/share-icon.gif" alt="share-image" class="w-14 rounded-full"/>
+                <div class="text-white leading-5 flex flex-col justify-center">
+                    <p class="text-[#ffbade] text-sm font-bold">Share HIANIME</p>
+                    <p class="text-sm">to your friends</p>
+                </div>
+                <div class="text-gray-500 ml-4 text-center flex flex-col items-center justify-center leading-4">
+                    <p class="text-[20px]">520k</p>
+                    <p class="text-[10px]">Shares</p>
+                </div>
+                <div class="flex gap-2 ml-auto md:ml-4">
+                    <!-- Telegram -->
+                    <button class="text-white flex items-center rounded-full gap-2 px-4 py-1.5 bg-blue-500 hover:opacity-80 transition">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path></svg>
+                        <span class="text-sm hidden lg:block">Share</span>
+                    </button>
+                    <!-- X / Twitter -->
+                    <button class="text-white flex items-center rounded-full gap-2 px-4 py-1.5 bg-black hover:opacity-80 transition">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
+                        <span class="text-sm hidden lg:block">Share</span>
+                    </button>
+                    <!-- More -->
+                    <button class="text-white flex items-center rounded-full gap-3 px-4 py-1.5 bg-[#95D03A] hover:opacity-80 transition">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path d="M383.822 344.427c-16.045 0-31.024 5.326-41.721 15.979l-152.957-88.42c1.071-5.328 2.142-9.593 2.142-14.919 0-5.328-1.071-9.593-2.142-14.919l150.826-87.35c11.762 10.653 26.741 17.041 43.852 17.041 35.295 0 64.178-28.766 64.178-63.92C448 72.767 419.117 44 383.822 44c-35.297 0-64.179 28.767-64.179 63.92 0 5.327 1.065 9.593 2.142 14.919l-150.821 87.35c-11.767-10.654-26.741-17.041-43.856-17.041-35.296 0-63.108 28.766-63.108 63.92 0 35.153 28.877 63.92 64.178 63.92 17.115 0 32.089-6.389 43.856-17.042l151.891 88.421c-1.076 4.255-2.141 8.521-2.141 13.847 0 34.094 27.806 61.787 62.037 61.787 34.229 0 62.036-27.693 62.036-61.787.001-34.094-27.805-61.787-62.035-61.787z"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- SEO Content and Trending Posts Sidebar -->
+            <div class="flex flex-col md:flex-row justify-between mt-10 px-4 md:px-0 gap-10">
+                <!-- Left: SEO Content -->
+                <div class="w-full md:w-[63%] space-y-5 text-[#ccc] leading-7">
+                    <h1 class="text-2xl md:text-[1.8rem] leading-8 text-[#fff] font-bold">HiAnimes.se - The best site to watch anime online for Free</h1>
+                    <p>Anime is famous worldwide and it is no wonder we've seen a sharp rise in the number of free anime streaming sites. Just like free online movie streaming sites, anime watching sites are not created equally...</p>
+                    <h2 class="text-xl md:text-[1.5rem] text-[#fff] font-bold pt-3">What is HiAnime?</h2>
+                    <p>HiAnime is a free site to watch anime and you can even download subbed or dubbed anime in ultra HD quality without any registration or payment.</p>
+                    <h2 class="text-xl md:text-[1.5rem] text-[#fff] font-bold pt-3">Is HiAnimes.se safe?</h2>
+                    <p>Yes we are, we do have only one Ads to cover the server cost and we keep scanning the ads 24/7 to make sure all are clean.</p>
                 </div>
 
-                <!-- Right Image Section -->
-                <div class="w-full md:w-1/2 relative min-h-[300px] md:min-h-full">
-                    <div class="image-overlay hidden md:block"></div>
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieNh5RMAw3H0p33uuwa33a0NYJVGBooX7JuDgYuws5rmf1sYz19h88T-E5vGHZl6ZzMEDe7Zv7z-bmtV1M0guGDHCLmRyo6jVyVBaQUvFhQmWE0JUng6VkIbPI0T8hn7E5SHgtc5OY6noUfoh_yfsnd5nNhsdaR9cJE6VcnRu_gI8FWrODwaDvfrgQOFM/s1091/anw-min.png" 
-                         alt="Anime Characters" 
-                         class="absolute inset-0 w-full h-full object-cover object-center md:object-right opacity-80 md:opacity-100">
+                <!-- Right: Trending Posts -->
+                <div class="w-full md:w-[33%] space-y-4">
+                    <h1 class="text-[1.8rem] leading-8 pb-4 text-[#fff] font-bold">Trending Posts</h1>
+                    
+                    <!-- Post 1 -->
+                    <div class="containbg text-white rounded-2xl shadow-lg p-6">
+                        <div class="flex items-center justify-between text-[12px] mb-3">
+                            <div class="flex items-center gap-4">
+                                <span class="text-green-400 font-semibold">#Suggestion</span>
+                                <span class="text-gray-400">7 hours ago</span>
+                            </div>
+                            <div class="flex items-center text-gray-400 gap-1">
+                                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                                <span>155</span>
+                            </div>
+                        </div>
+                        <h2 class="font-bold mb-2">Do you guys have any tips on how to wake up early? like at 9-10 Am ?</h2>
+                        <div class="flex items-center mt-4">
+                            <img src="https://cdn.noitatnemucod.net/avatar/100x100/spy_family/01.png" class="w-9 h-9 rounded-full"/>
+                            <span class="ml-3 text-sm text-gray-400 hover:text-[#ee559ce5] cursor-pointer">SGNK-43_xD</span>
+                        </div>
+                    </div>
+
+                    <!-- Post 2 -->
+                    <div class="containbg text-white rounded-2xl shadow-lg p-6">
+                        <div class="flex items-center justify-between text-[12px] mb-3">
+                            <div class="flex items-center gap-4">
+                                <span class="text-green-400 font-semibold">#Recommendation</span>
+                                <span class="text-gray-400">2 days ago</span>
+                            </div>
+                            <div class="flex items-center text-gray-400 gap-1">
+                                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                                <span>80</span>
+                            </div>
+                        </div>
+                        <h2 class="font-bold mb-2">YOU NEED TO WATCH THEM BEFORE YOU DIE!!! Here are some Greatest Anime of All Time...</h2>
+                        <div class="flex items-center mt-4">
+                            <img src="https://cdn.noitatnemucod.net/avatar/100x100/spy_family/01.png" class="w-9 h-9 rounded-full"/>
+                            <span class="ml-3 text-sm text-gray-400 hover:text-[#ee559ce5] cursor-pointer">AnimeLover_99</span>
+                        </div>
+                    </div>
+
+                    <button class="w-full text-center containbg rounded-full py-3 text-sm text-[#fff] font-semibold hover:opacity-80 transition mt-2">Read More</button>
                 </div>
             </div>
         </div>
-    </main>
 
-    <!-- Simple Footer (Optional) -->
-    <footer class="text-center py-6 text-gray-500 text-xs uppercase tracking-widest">
-        &copy; 2026 h!anime - Built for GitHub
-    </footer>
+        <!-- Footer -->
+        <footer class="flex items-center gap-2 text-[15px] text-[#fff] mt-12 mb-10 px-4 md:px-0 py-4 opacity-60">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 448c-110.532 0-200-89.451-200-200 0-110.531 89.451-200 200-200 110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200zm107.351-101.064c-9.614 9.712-45.53 41.396-104.065 41.396-82.43 0-140.484-61.425-140.484-141.567 0-79.152 60.275-139.401 139.762-139.401 55.531 0 88.738 26.62 97.593 34.779a11.965 11.965 0 0 1 1.936 15.322l-18.155 28.113c-3.841 5.95-11.966 7.282-17.499 2.921-8.595-6.776-31.814-22.538-61.708-22.538-48.303 0-77.916 35.33-77.916 80.082 0 41.589 26.888 83.692 78.277 83.692 32.657 0 56.843-19.039 65.726-27.225 5.27-4.857 13.596-4.039 17.82 1.738l19.865 27.17a11.947 11.947 0 0 1-1.152 15.518z"></path></svg>
+            <p>HiAnime. All rights reserved.</p>
+        </footer>
+    </div>
 
 </body>
 </html>
