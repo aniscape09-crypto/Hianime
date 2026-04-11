@@ -1,0 +1,40 @@
+:root {
+    --primary: #5a2e98;
+    --bg: #0b0b0b;
+    --card-bg: #1a1a1a;
+    --text: #ffffff;
+    --gray: #959595;
+}
+
+body { background: var(--bg); color: var(--text); font-family: 'Poppins', sans-serif; margin: 0; }
+.container { max-width: 1200px; margin: auto; padding: 20px; }
+
+/* Header & Search */
+.main-header { background: #000; padding: 15px 0; border-bottom: 2px solid var(--primary); }
+.flex-header { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: 700; color: white; text-decoration: none; }
+.logo span { color: var(--primary); }
+.search-container { position: relative; width: 40%; }
+#anime-search { width: 100%; padding: 10px; background: #222; border: none; color: white; border-radius: 5px; }
+.predict-dropdown { position: absolute; background: #222; width: 100%; z-index: 100; border-radius: 0 0 5px 5px; display: none; }
+.predict-dropdown a { display: block; padding: 10px; color: white; text-decoration: none; border-bottom: 1px solid #333; }
+.predict-dropdown a:hover { background: var(--primary); }
+
+/* Grid */
+.anime-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+.anime-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; transition: 0.3s; }
+.anime-card:hover { transform: translateY(-5px); }
+.anime-card img { width: 100%; height: 250px; object-fit: cover; }
+.anime-card h3 { font-size: 14px; padding: 10px; text-align: center; margin: 0; height: 40px; overflow: hidden; }
+
+/* Player */
+.iframe-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
+.iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.info-card { display: flex; gap: 20px; margin-top: 20px; background: var(--card-bg); padding: 20px; border-radius: 10px; }
+.info-poster { width: 200px; border-radius: 5px; }
+
+/* Intro Page */
+.intro-bg { height: 100vh; background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKL9X8NvkAlLCsGEmX6HdZJTk4FKxWfDxFs_wIQYm8nWj5q_BiTTqMU6iiXx-RavoEMixSuNJTNbfkEkDW_3yep9obni_cG_KnOaTpxXAJQrCLgpKSyaXky6BnQsGjN4iWyERX7n3oNs6ob54PD8k_9p1PsN8dUXNMnuvE5M2gbLvfGwNdx6FaqSGX/s1280/one%20pice%20sub%20indo.jpg') center/cover; }
+.intro-overlay { height: 100%; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; }
+.intro-box { text-align: center; }
+.btn-watch { padding: 15px 40px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; display: inline-block; margin-top: 20px; }
