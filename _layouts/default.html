@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | 9Anime</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container flex-header">
+            <a href="/home" class="logo">9<span>ANIME</span></a>
+            <div class="search-container">
+                <input type="text" id="anime-search" placeholder="Search anime..." onkeyup="doSearch()">
+                <div id="predict-results" class="predict-dropdown"></div>
+            </div>
+        </div>
+    </header>
+
+    {{ content }}
+
+    <footer class="main-footer">
+        <p>&copy; 2026 9Anime Clone. Hosted on GitHub.</p>
+    </footer>
+
+    <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+</body>
+</html>
