@@ -113,37 +113,31 @@
 </head>
 <body class="pb-10">
 
-    <!-- Header Section -->
     <header class="sticky top-0 z-50 bg-[#12131a]/95 backdrop-blur-sm border-b border-white/5">
         <div class="max-w-[1400px] mx-auto px-4 flex items-center justify-between h-20">
-            <!-- Left: Logo & Mobile Toggle -->
             <div class="flex items-center gap-6">
                 <button class="lg:hidden text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
-                <a href="#"><img src="https://hianimes.se/assets/logo.png" alt="logo" class="h-10 w-auto" /></a>
+                <a href="../index.html"><img src="https://hianimes.se/assets/logo.png" alt="logo" class="h-10 w-auto" /></a>
             </div>
 
-            <!-- Middle: Search Bar (Desktop) -->
             <div class="hidden md:flex flex-1 max-w-2xl mx-10">
-                <div class="relative w-full">
-                    <input type="text" placeholder="Search anime..." class="w-full bg-white text-black py-2.5 px-5 rounded-l-xl outline-none focus:ring-2 focus:ring-pink-300">
+                <div class="relative w-full z-50">
+                    <input type="text" id="search-input" autocomplete="off" placeholder="Search anime..." class="w-full bg-white text-black py-2.5 px-5 rounded-l-xl outline-none focus:ring-2 focus:ring-pink-300">
                     <button class="absolute right-0 top-0 h-full btn-pink px-5 rounded-r-xl">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </button>
+                    <div id="search-results" class="absolute top-full left-0 w-full mt-2 bg-[#242530] rounded-xl shadow-2xl overflow-hidden hidden flex-col max-h-[400px] overflow-y-auto border border-white/10">
+                        </div>
                 </div>
             </div>
 
-            <!-- Right: Social & Profile -->
             <div class="flex items-center gap-4">
-                <div class="hidden xl:flex items-center gap-3">
-                    <a href="#" class="p-2 bg-blue-500 rounded-full text-white"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
-                    <a href="#" class="p-2 bg-sky-400 rounded-full text-white"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
-                </div>
                 <button class="bg-white/10 hover:bg-white/20 p-2.5 rounded-xl transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -152,32 +146,26 @@
             </div>
         </div>
         
-        <!-- Navigation Menu -->
         <nav class="max-w-[1400px] mx-auto px-4 pb-4">
             <ul class="flex flex-wrap items-center gap-6 text-[14px] font-medium text-gray-300">
-                <li><a href="#" class="nav-link text-pink-custom">Home</a></li>
+                <li><a href="../index.html" class="nav-link text-[#ffbade]">Home</a></li>
                 <li><a href="#" class="nav-link">Most Popular</a></li>
                 <li><a href="#" class="nav-link">Movies</a></li>
                 <li><a href="#" class="nav-link">TV Series</a></li>
-                <li><a href="#" class="nav-link">OVAs</a></li>
-                <li><a href="#" class="nav-link">ONAs</a></li>
-                <li><a href="#" class="nav-link">Specials</a></li>
-                <li><a href="#" class="nav-link">Anime List</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="max-w-[1400px] mx-auto px-4 mt-6">
         
-        <!-- Hero Featured Slider -->
         <section class="mb-10">
             <div class="hero-slider">
                 <div class="hero-backdrop" style="background-image: url('https://9anime.org.lv/wp-content/uploads/2024/08/One-Piece-cover-new-1.webp');"></div>
                 <div class="hero-gradient"></div>
                 <div class="relative h-full flex flex-col justify-center px-10 md:px-20 max-w-2xl">
-                    <span class="text-pink-custom font-bold text-sm mb-2">#1 Spotlight</span>
+                    <span class="text-[#ffbade] font-bold text-sm mb-2">#1 Spotlight</span>
                     <h1 class="text-4xl md:text-5xl font-bold mb-4 line-clamp-2">One Piece</h1>
-                    <p class="text-gray-300 text-sm mb-8 line-clamp-3">Gold Roger was known as the "Pirate King", the strongest and most infamous being to have sailed the Grand Line. The capture and execution of Roger by the World Government brought a change throughout the world...</p>
+                    <p class="text-gray-300 text-sm mb-8 line-clamp-3">Gold Roger was known as the "Pirate King", the strongest and most infamous being to have sailed the Grand Line...</p>
                     <div class="flex items-center gap-4">
                         <button class="btn-pink px-8 py-3 rounded-xl font-bold flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -185,7 +173,6 @@
                             </svg>
                             Watch Now
                         </button>
-                        <button class="bg-white/10 hover:bg-white/20 px-8 py-3 rounded-xl font-bold transition">Detail</button>
                     </div>
                 </div>
             </div>
@@ -193,309 +180,152 @@
 
         <div class="flex flex-col lg:flex-row gap-8">
             
-            <!-- Main Content Grid -->
             <div class="flex-1 space-y-12">
                 
-                <!-- Popular Today -->
-                <section>
+                <section id="posts-section">
                     <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-2xl font-bold border-l-4 border-pink-400 pl-4">Popular Today</h2>
-                        <a href="#" class="text-xs text-gray-400 hover:text-pink-custom uppercase font-bold tracking-widest">View All</a>
+                        <h2 class="text-2xl font-bold border-l-4 border-[#ffbade] pl-4">Recently Added</h2>
                     </div>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
-                        <!-- Card 1 -->
-                        <div class="anime-card group relative cursor-pointer">
-                            <div class="relative">
-                                <img src="https://9anime.org.lv/wp-content/uploads/2024/08/One-Piece-Elbaph-arc-Key-Visual-9anime.webp" alt="One Piece">
-                                <div class="absolute bottom-2 left-2 flex gap-1">
-                                    <span class="badge-ep">Ep 1156</span>
-                                    <span class="badge-sub">Sub</span>
-                                </div>
-                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                                    <div class="p-3 bg-pink-400 rounded-full text-black">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <h3 class="font-semibold text-sm line-clamp-2 hover:text-pink-custom transition">One Piece</h3>
-                            </div>
+                    
+                    <div id="anime-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
                         </div>
 
-                        <!-- Card 2 -->
-                        <div class="anime-card group relative cursor-pointer">
-                            <div class="relative">
-                                <img src="https://9anime.org.lv/wp-content/uploads/2026/04/1775043678-3686-153626.jpg" alt="Classroom of the Elite">
-                                <div class="absolute bottom-2 left-2 flex gap-1">
-                                    <span class="badge-ep">Ep 5</span>
-                                    <span class="badge-sub">Sub</span>
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <h3 class="font-semibold text-sm line-clamp-2 hover:text-pink-custom">Classroom of the Elite IV</h3>
-                            </div>
+                    <div id="pagination" class="mt-10 flex justify-center gap-4">
                         </div>
-
-                        <!-- Card 3 -->
-                        <div class="anime-card group relative cursor-pointer">
-                            <div class="relative">
-                                <img src="https://9anime.org.lv/wp-content/uploads/2025/11/Jujutsu-Kaisen-The-Culling-Game-Part-1-new.webp" alt="JJK">
-                                <div class="absolute bottom-2 left-2 flex gap-1">
-                                    <span class="badge-ep">Ep 12</span>
-                                    <span class="badge-sub">Sub</span>
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <h3 class="font-semibold text-sm line-clamp-2 hover:text-pink-custom">Jujutsu Kaisen: The Culling Game</h3>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="anime-card group relative cursor-pointer">
-                            <div class="relative">
-                                <img src="https://9anime.org.lv/wp-content/uploads/2024/09/1725272137-5779-111305.jpg" alt="Naruto">
-                                <div class="absolute bottom-2 left-2 flex gap-1">
-                                    <span class="badge-ep">Ep 500</span>
-                                    <span class="badge-sub">Dub</span>
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <h3 class="font-semibold text-sm line-clamp-2 hover:text-pink-custom">Naruto: Shippuuden</h3>
-                            </div>
-                        </div>
-
-                        <!-- Card 5 -->
-                        <div class="anime-card group relative cursor-pointer xl:block">
-                            <div class="relative">
-                                <img src="https://9anime.org.lv/wp-content/uploads/2025/08/Hells-Paradise-Season-2-210x300.webp" alt="Hell's Paradise">
-                                <div class="absolute bottom-2 left-2 flex gap-1">
-                                    <span class="badge-ep">Ongoing</span>
-                                    <span class="badge-sub">Sub</span>
-                                </div>
-                            </div>
-                            <div class="p-3">
-                                <h3 class="font-semibold text-sm line-clamp-2 hover:text-pink-custom">Hell's Paradise Season 2</h3>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Latest Release -->
-                <section>
-                    <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-2xl font-bold border-l-4 border-pink-400 pl-4">Latest Release</h2>
-                        <a href="#" class="text-xs text-gray-400 hover:text-pink-custom uppercase font-bold tracking-widest">View All</a>
-                    </div>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
-                        <!-- Card Template -->
-                        <div class="anime-card cursor-pointer">
-                            <img src="https://9anime.org.lv/wp-content/uploads/2026/04/1775827537-2351-155965.jpg">
-                            <div class="p-3">
-                                <h3 class="font-semibold text-sm line-clamp-2">Botan Kamiina Fully Blossoms</h3>
-                            </div>
-                        </div>
-                        <div class="anime-card cursor-pointer">
-                            <img src="https://9anime.org.lv/wp-content/uploads/2026/04/1775135164-2105-156389.jpg">
-                            <div class="p-3">
-                                <h3 class="font-semibold text-sm line-clamp-2">That Time I Got Reincarnated as a Slime S4</h3>
-                            </div>
-                        </div>
-                        <div class="anime-card cursor-pointer">
-                            <img src="https://9anime.org.lv/wp-content/uploads/2026/04/1775225043-4124-156390.jpg">
-                            <div class="p-3">
-                                <h3 class="font-semibold text-sm line-clamp-2">Snowball Earth</h3>
-                            </div>
-                        </div>
-                        <div class="anime-card cursor-pointer">
-                            <img src="https://9anime.org.lv/wp-content/uploads/2026/04/1775135014-5681-154843.jpg">
-                            <div class="p-3">
-                                <h3 class="font-semibold text-sm line-clamp-2">The Angel Next Door Spoils Me Rotten 2</h3>
-                            </div>
-                        </div>
-                        <div class="anime-card cursor-pointer">
-                            <img src="https://9anime.org.lv/wp-content/uploads/2026/01/1767495183-8726-152470.jpg">
-                            <div class="p-3">
-                                <h3 class="font-semibold text-sm line-clamp-2">Saioshi no Gikei wo Mederu Tame</h3>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Top Upcoming (Custom Egg Style Layout) -->
-                <section>
-                    <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-2xl font-bold border-l-4 border-pink-400 pl-4">Top Upcoming</h2>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="flex bg-white/5 hover:bg-white/10 transition rounded-2xl overflow-hidden p-4 items-center gap-4">
-                            <img src="https://9anime.org.lv/wp-content/uploads/2026/04/1775827623-4793-156641.jpg" class="w-20 h-28 object-cover rounded-xl shadow-lg">
-                            <div>
-                                <h4 class="font-bold text-sm mb-1">Hokuto no Ken: Fist of the North Star</h4>
-                                <p class="text-xs text-pink-custom mb-2">TV • Apr 11, 2026</p>
-                                <button class="btn-pink text-[10px] py-1 px-3 rounded-lg font-bold">PREVIEW</button>
-                            </div>
-                        </div>
-                        <div class="flex bg-white/5 hover:bg-white/10 transition rounded-2xl overflow-hidden p-4 items-center gap-4">
-                            <img src="https://9anime.org.lv/wp-content/uploads/2026/01/1769408548-5451-152695.jpg" class="w-20 h-28 object-cover rounded-xl shadow-lg">
-                            <div>
-                                <h4 class="font-bold text-sm mb-1">Terror Man</h4>
-                                <p class="text-xs text-pink-custom mb-2">ONA • Jan 29, 2026</p>
-                                <button class="btn-pink text-[10px] py-1 px-3 rounded-lg font-bold">PREVIEW</button>
-                            </div>
-                        </div>
-                    </div>
                 </section>
             </div>
 
-            <!-- Sidebar -->
             <aside class="w-full lg:w-[320px] space-y-10">
-                
-                <!-- Quick Filter -->
                 <div class="bg-white/5 rounded-2xl p-6">
                     <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#ffbade]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" /></svg>
                         Quick Filter
                     </h3>
                     <div class="grid grid-cols-2 gap-2 text-xs">
-                        <div class="bg-black/30 p-2 rounded hover:text-pink-400 transition cursor-pointer">Action</div>
-                        <div class="bg-black/30 p-2 rounded hover:text-pink-400 transition cursor-pointer">Adventure</div>
-                        <div class="bg-black/30 p-2 rounded hover:text-pink-400 transition cursor-pointer">Comedy</div>
-                        <div class="bg-black/30 p-2 rounded hover:text-pink-400 transition cursor-pointer">Fantasy</div>
-                        <div class="bg-black/30 p-2 rounded hover:text-pink-400 transition cursor-pointer">Romance</div>
-                        <div class="bg-black/30 p-2 rounded hover:text-pink-400 transition cursor-pointer">Sci-Fi</div>
-                    </div>
-                    <button class="w-full btn-pink py-2 mt-4 rounded-xl text-xs font-bold">GO TO LIST</button>
-                </div>
-
-                <!-- Top Anime Tabbed List -->
-                <div>
-                    <h3 class="text-xl font-bold mb-6 border-l-4 border-pink-400 pl-4">Top Anime</h3>
-                    <div class="flex border-b border-white/5 mb-6 text-sm font-medium">
-                        <button class="tab-btn px-4 py-2 active">Weekly</button>
-                        <button class="tab-btn px-4 py-2">Monthly</button>
-                        <button class="tab-btn px-4 py-2">All</button>
-                    </div>
-                    <div class="space-y-4">
-                        <!-- Top Item 1 -->
-                        <div class="flex items-center gap-4 group">
-                            <div class="text-2xl font-bold text-gray-600 group-hover:text-pink-400 transition w-6">01</div>
-                            <img src="https://9anime.org.lv/wp-content/uploads/2024/08/One-Piece-Elbaph-arc-Key-Visual-9anime-213x300.webp" class="w-14 h-20 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-bold text-sm line-clamp-1 group-hover:text-pink-400 cursor-pointer">One Piece</h4>
-                                <p class="text-[10px] text-gray-500 mt-1">Action, Adventure, Fantasy</p>
-                                <div class="flex items-center gap-2 mt-1">
-                                    <div class="bg-pink-400/20 text-pink-400 text-[9px] px-2 rounded">⭐ 8.72</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Top Item 2 -->
-                        <div class="flex items-center gap-4 group">
-                            <div class="text-2xl font-bold text-gray-600 group-hover:text-pink-400 transition w-6">02</div>
-                            <img src="https://9anime.org.lv/wp-content/uploads/2026/04/1775043678-3686-153626.jpg" class="w-14 h-20 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-bold text-sm line-clamp-1 group-hover:text-pink-400 cursor-pointer">Classroom of the Elite</h4>
-                                <p class="text-[10px] text-gray-500 mt-1">Drama, Psychological</p>
-                            </div>
-                        </div>
-                        <!-- Top Item 3 -->
-                        <div class="flex items-center gap-4 group">
-                            <div class="text-2xl font-bold text-gray-600 group-hover:text-pink-400 transition w-6">03</div>
-                            <img src="https://9anime.org.lv/wp-content/uploads/2025/11/Jujutsu-Kaisen-The-Culling-Game-Part-1-new-210x300.webp" class="w-14 h-20 object-cover rounded-lg">
-                            <div class="flex-1">
-                                <h4 class="font-bold text-sm line-clamp-1 group-hover:text-pink-400 cursor-pointer">Jujutsu Kaisen</h4>
-                                <p class="text-[10px] text-gray-500 mt-1">Action, School, Supernatural</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Genre List -->
-                <div class="bg-white/5 rounded-2xl p-6">
-                    <h3 class="text-lg font-bold mb-6">Genres</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Action</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Adventure</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Comedy</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Drama</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Ecchi</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Fantasy</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Harem</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Horror</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Music</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Mystery</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Psychological</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Romance</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">School</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Seinen</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Shoujo</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Shounen</a>
-                        <a href="#" class="text-[11px] px-3 py-1.5 bg-black/40 rounded-full hover:bg-pink-400/20 hover:text-pink-400 transition">Slice of Life</a>
+                        <div class="bg-black/30 p-2 rounded hover:text-[#ffbade] transition cursor-pointer">Action</div>
+                        <div class="bg-black/30 p-2 rounded hover:text-[#ffbade] transition cursor-pointer">Adventure</div>
+                        <div class="bg-black/30 p-2 rounded hover:text-[#ffbade] transition cursor-pointer">Comedy</div>
+                        <div class="bg-black/30 p-2 rounded hover:text-[#ffbade] transition cursor-pointer">Fantasy</div>
                     </div>
                 </div>
             </aside>
         </div>
     </main>
 
-    <!-- Footer Section -->
     <footer class="mt-20 border-t border-white/5 bg-[#1a1b26]">
-        <div class="max-w-[1400px] mx-auto px-4 py-12">
-            
-            <!-- A-Z LIST -->
-            <div class="mb-10">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-lg font-bold">A-Z LIST</span>
-                    <span class="text-xs text-gray-500">Searching order by alphabet name A to Z.</span>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">#</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">0-9</a>
-                    <!-- Generated A-Z -->
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">A</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">B</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">C</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">D</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">E</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">F</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">G</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">H</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">I</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">J</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">K</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">L</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">M</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">N</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">O</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">P</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">Q</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">R</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">S</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">T</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">U</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">V</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">W</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">X</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">Y</a>
-                    <a href="#" class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg text-xs hover:bg-pink-400 hover:text-black transition">Z</a>
-                </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pt-10 border-t border-white/5">
-                <div class="text-center md:text-left">
-                    <img src="https://hianimes.se/assets/logo.png" alt="logo" class="h-8 mb-4">
-                    <p class="text-[10px] text-gray-500 uppercase tracking-widest">Copyright © 2026 HiAnime. All Rights Reserved</p>
-                    <p class="text-[10px] text-gray-600 mt-2">Disclaimer: This site HiAnime does not store any files on its server. All contents are provided by non-affiliated third parties.</p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-400 font-medium">
-                    <a href="#" class="hover:text-pink-400 transition">Terms of Service</a>
-                    <a href="#" class="hover:text-pink-400 transition">DMCA</a>
-                    <a href="#" class="hover:text-pink-400 transition">Contact</a>
-                    <a href="#" class="hover:text-pink-400 transition">Sitemap</a>
-                </div>
-            </div>
+        <div class="max-w-[1400px] mx-auto px-4 py-12 text-center text-xs text-gray-500">
+            <p>Copyright © 2026 HiAnime. All Rights Reserved</p>
         </div>
     </footer>
 
+    <script>
+        let animeData = [];
+        let currentPage = 1;
+        const itemsPerPage = 15; // Shows 15 items per page (perfect for 5 columns)
+
+        // 1. Fetch data ONCE when page loads (Make sure data/anime-list.json exists!)
+        fetch('/data/anime-list.json')
+            .then(res => res.json())
+            .then(data => {
+                animeData = data;
+                renderPage(currentPage);
+            })
+            .catch(err => console.error("Error loading JSON. Make sure you created /data/anime-list.json"));
+
+        // 2. Render Grid Function (Uses your exact CSS card design)
+        function renderPage(page) {
+            const startIndex = (page - 1) * itemsPerPage;
+            const currentItems = animeData.slice(startIndex, startIndex + itemsPerPage);
+            const grid = document.getElementById('anime-grid');
+            
+            grid.innerHTML = currentItems.map(a => `
+                <div class="anime-card group relative cursor-pointer" onclick="location.href='../anime.html?id=${a.id}'">
+                    <div class="relative">
+                        <img src="${a.image}" alt="${a.title}">
+                        <div class="absolute bottom-2 left-2 flex gap-1">
+                            <span class="badge-ep">HD</span>
+                            <span class="badge-sub">Sub</span>
+                        </div>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <div class="p-3 bg-[#ffbade] rounded-full text-black">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-semibold text-sm line-clamp-2 hover:text-[#ffbade] transition">${a.title}</h3>
+                    </div>
+                </div>
+            `).join('');
+
+            renderPagination();
+        }
+
+        // 3. Render Next/Prev Buttons
+        function renderPagination() {
+            const totalPages = Math.ceil(animeData.length / itemsPerPage);
+            const pagDiv = document.getElementById('pagination');
+            let html = '';
+            
+            if (currentPage > 1) {
+                html += `<button onclick="changePage(${currentPage - 1})" class="px-6 py-2 bg-[#242530] hover:bg-[#ffbade] hover:text-black font-bold rounded-lg transition">⬅ Previous</button>`;
+            }
+            if (currentPage < totalPages) {
+                html += `<button onclick="changePage(${currentPage + 1})" class="px-6 py-2 bg-[#242530] hover:bg-[#ffbade] hover:text-black font-bold rounded-lg transition">Next ➡</button>`;
+            }
+            pagDiv.innerHTML = html;
+        }
+
+        function changePage(newPage) {
+            currentPage = newPage;
+            renderPage(currentPage);
+            document.getElementById('posts-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 4. Instant Search Logic (HiAnime Dropdown Style)
+        const searchInput = document.getElementById('search-input');
+        const resultsBox = document.getElementById('search-results');
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            
+            if(!query) { 
+                resultsBox.classList.add('hidden');
+                resultsBox.classList.remove('flex');
+                return; 
+            }
+
+            const filtered = animeData.filter(a => a.title.toLowerCase().includes(query)).slice(0, 8);
+            
+            if(filtered.length > 0) {
+                resultsBox.classList.remove('hidden');
+                resultsBox.classList.add('flex');
+                
+                resultsBox.innerHTML = filtered.map(a => `
+                    <div onclick="location.href='../anime.html?id=${a.id}'" class="flex items-center gap-4 p-3 hover:bg-[#12131a] cursor-pointer border-b border-white/5 transition">
+                        <img src="${a.image}" class="w-10 h-14 object-cover rounded">
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-200">${a.title}</h4>
+                            <span class="text-[10px] text-gray-500">Sub/Dub</span>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                resultsBox.classList.remove('hidden');
+                resultsBox.classList.add('flex');
+                resultsBox.innerHTML = `<div class="p-4 text-sm text-gray-500 text-center">No results found</div>`;
+            }
+        });
+
+        // Hide search results if clicked outside
+        document.addEventListener('click', (e) => {
+            if(!searchInput.contains(e.target) && !resultsBox.contains(e.target)) {
+                resultsBox.classList.add('hidden');
+                resultsBox.classList.remove('flex');
+            }
+        });
+    </script>
 </body>
 </html>
