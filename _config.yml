@@ -1,16 +1,11 @@
 title: 9Anime Stream
-description: Watch 5,000+ Anime for Free
-url: "https://yourusername.github.io" # Change to your GitHub URL
-baseurl: ""
+url: "https://aniscape09-crypto.github.io"
+baseurl: "/Hianime" # Add your repo name here
 
 collections:
   anime:
     output: true
     permalink: /anime/:path/
 
-# Pagination settings for the Home page
 paginate: 24
 paginate_path: "/home/page:num/"
-
-markdown: kramdown
-theme: minima # Optional, we will override most of it
