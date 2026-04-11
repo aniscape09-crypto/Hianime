@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="container player-page">
+    <div class="video-section">
+        <h1 class="anime-title">{{ page.title }}</h1>
+        <div class="iframe-wrapper">
+            <iframe src="{{ page.iframe_url }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <img src="{{ page.image_url }}" alt="{{ page.title }}" class="info-poster">
+        <div class="details">
+            <span class="status-badge">{{ page.status }}</span>
+            <div class="synopsis">
+                <h3>Synopsis</h3>
+                <p>{{ content }}</p>
+            </div>
+        </div>
+    </div>
+</div>
