@@ -1,0 +1,12 @@
+title: 9Anime Clone
+baseurl: "" 
+url: "https://yourusername.github.io"
+
+collections:
+  anime:
+    output: true
+    permalink: /anime/:path/
+
+# This enables the home page to show 20-30 anime per page
+paginate: 20
+paginate_path: "/home/page:num/"
