@@ -1,48 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Watch Anime - HiAnime</title>
-<script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <title>Watching - HiAnime</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#0f0f0f] text-white font-sans">
+<body class="bg-[#12131a] text-white">
 
-  <div class="p-5 bg-[#1a1a1a] flex justify-between">
-    <div class="font-bold text-xl text-pink-500">HiAnime</div>
-    <a href="home/index.html" class="hover:text-pink-400">Back to Home</a>
-  </div>
-
-  <div class="max-w-[1000px] mx-auto p-5 flex gap-5 mt-5">
-    
-    <div class="w-[200px] shrink-0">
-      <img id="poster" src="" class="w-full rounded-lg shadow-lg">
+    <div class="p-4 bg-[#1a1b26] border-b border-white/5 flex justify-between items-center">
+        <a href="home/index.html"><img src="https://hianimes.se/assets/logo.png" class="h-8"></a>
+        <a href="home/index.html" class="text-sm text-[#ffbade] font-bold">⬅ Back to Home</a>
     </div>
 
-    <div class="flex-1">
-      <h1 id="title" class="text-3xl font-bold mb-4">Loading...</h1>
-      <div id="player" class="w-full bg-black rounded-lg overflow-hidden border border-gray-800">
+    <div class="max-w-[1200px] mx-auto p-4 mt-6">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <div class="flex-1">
+                <h1 id="anime-title" class="text-2xl font-bold mb-4 border-l-4 border-[#ffbade] pl-4">Loading Anime...</h1>
+                
+                <div id="video-container" class="w-full bg-[#242530] rounded-xl overflow-hidden shadow-2xl border border-white/10" style="height: 600px;">
+                    </div>
+            </div>
+
+            <aside class="w-full lg:w-[300px]">
+                <img id="anime-poster" src="" class="w-full rounded-xl shadow-lg mb-4 border border-white/10">
+                <div class="p-4 bg-[#242530] rounded-xl">
+                    <p class="text-sm text-gray-300 font-semibold mb-2 text-[#ffbade]">Note:</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">Choose your episode from the player panel on the left to start streaming.</p>
+                </div>
+            </aside>
+            
         </div>
     </div>
 
-  </div>
+    <script>
+        // 1. Get the ID from the URL (e.g., anime.html?id=fullmetal)
+        const params = new URLSearchParams(window.location.search);
+        const animeId = params.get('id');
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const animeId = params.get("id");
+        if (animeId) {
+            // 2. Fetch the JSON data for this specific anime
+            fetch(`/data/posts/${animeId}.json`)
+                .then(res => res.json())
+                .then(data => {
+                    // 3. Inject Title and Image
+                    document.getElementById('anime-title').innerText = data.title;
+                    document.getElementById('anime-poster').src = data.image;
 
-    if(animeId){
-      fetch(`/data/posts/${animeId}.json`)
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById("title").innerText = data.title;
-          document.getElementById("poster").src = data.image;
-          document.getElementById("player").innerHTML = 
-            `<iframe src="${data.iframe}" width="100%" height="450" frameborder="0" allowfullscreen></iframe>`;
-        })
-        .catch(() => {
-          document.getElementById("title").innerText = "Anime not found!";
-        });
-    }
-  </script>
-
+                    // 4. Inject the Blogger Iframe
+                    document.getElementById('video-container').innerHTML = `
+                        <iframe 
+                            src="${data.iframe}" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            allowfullscreen>
+                        </iframe>
+                    `;
+                })
+                .catch(err => {
+                    document.getElementById('anime-title').innerText = "Anime not found!";
+                    document.getElementById('video-container').innerHTML = `
+                        <div class="flex items-center justify-center h-full text-gray-500">
+                            Failed to load the player. Check your JSON file.
+                        </div>
+                    `;
+                });
+        }
+    </script>
 </body>
 </html>
